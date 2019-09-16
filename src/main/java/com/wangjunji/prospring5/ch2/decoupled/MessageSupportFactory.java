@@ -20,7 +20,7 @@ public class MessageSupportFactory {
     private MessageSupportFactory(){
         props = new Properties();
         try {
-            props.load(this.getClass().getResourceAsStream("msf.properties"));
+            props.load(MessageSupportFactory.class.getResourceAsStream("msf.properties"));
             String rendererClass= props.getProperty("renderer.class");
             String providerClass = props.getProperty("provider.class");
             renderr = (MessageRenderer) Class.forName(rendererClass).newInstance();

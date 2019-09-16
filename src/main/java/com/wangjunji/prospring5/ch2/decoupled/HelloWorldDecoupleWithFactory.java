@@ -4,6 +4,7 @@ public class HelloWorldDecoupleWithFactory {
     public static void main(String[] args) {
         MessageRenderer messageRender = MessageSupportFactory.getInstance().getMessageRender();
         MessageProvider provider = MessageSupportFactory.getInstance().getProvider();
-        messageRender.rendeer(provider);
+        messageRender.setMessageProvider(provider);
+        messageRender.rendeer();
     }
 }
